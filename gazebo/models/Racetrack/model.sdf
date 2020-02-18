@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="Racetrack">
+
+    <link name="link">
+      <pose>0.0 0.0 0.0 0 0 0</pose>
+      <collision name="collision">
+        <pose>0.254 -2.286 -0.005</pose>
+        <geometry>
+          <box>
+            <size>7.3152 12.192 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh><uri>model://Racetrack/meshes/Racetrack.dae</uri></mesh>
+        </geometry>
+      </visual>
+    </link>
+
+  </model>
+</sdf>

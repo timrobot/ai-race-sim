@@ -1,0 +1,251 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="rccar">
+
+    <!-- Define all links -->
+    <link name="chassis">
+      <pose>0.0 0.0 0.0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh><uri>model://rccar/meshes/Chassis.dae</uri></mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh><uri>model://rccar/meshes/Chassis.dae</uri></mesh>
+        </geometry>
+      </visual>
+      <inertial>
+        <pose>-0.000250 0.022491 0.048508 0 0 0</pose>
+        <mass>1.398582</mass>
+        <inertia>
+          <ixx>0.016922</ixx>
+          <ixy>0.000049</ixy>
+          <ixz>0.000016</ixz>
+          <iyy>0.004002</iyy>
+          <iyz>-0.000986</iyz>
+          <izz>0.016986</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <link name="front_left_balljoint">
+      <pose>-0.125 0.185 0.0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <sphere><radius>0.01</radius></sphere>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <sphere><radius>0.01</radius></sphere>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="front_left_wheel">
+      <pose>-0.125 0.185 0.0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh><uri>model://rccar/meshes/FrontLeftWheel.dae</uri></mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh><uri>model://rccar/meshes/FrontLeftWheel.dae</uri></mesh>
+        </geometry>
+      </visual>
+      <inertial>
+        <pose>-0.002500 0.000000 0.000000 0 0 0</pose>
+        <mass>0.393910</mass>
+        <inertia>
+          <ixx>0.000395</ixx>
+          <ixy>0.000000</ixy>
+          <ixz>0.000000</ixz>
+          <iyy>0.000278</iyy>
+          <iyz>0.000000</iyz>
+          <izz>0.000278</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <link name="front_right_balljoint">
+      <pose>0.125 0.185 0.0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <sphere><radius>0.01</radius></sphere>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <sphere><radius>0.01</radius></sphere>
+        </geometry>
+      </visual>
+      <inertial>
+        <mass>0.00001</mass>
+      </inertial>
+    </link>
+
+    <link name="front_right_wheel">
+      <pose>0.125 0.185 0.0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh><uri>model://rccar/meshes/FrontRightWheel.dae</uri></mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh><uri>model://rccar/meshes/FrontRightWheel.dae</uri></mesh>
+        </geometry>
+      </visual>
+      <inertial>
+        <pose>0.002500 0.000000 0.000000 0 0 0</pose>
+        <mass>0.393910</mass>
+        <inertia>
+          <ixx>0.000395</ixx>
+          <ixy>0.000000</ixy>
+          <ixz>0.000000</ixz>
+          <iyy>0.000278</iyy>
+          <iyz>0.000000</iyz>
+          <izz>0.000278</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <link name="back_left_wheel">
+      <pose>-0.125 -0.090 0.0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh><uri>model://rccar/meshes/BackLeftWheel.dae</uri></mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh><uri>model://rccar/meshes/BackLeftWheel.dae</uri></mesh>
+        </geometry>
+      </visual>
+      <inertial>
+        <pose>-0.002500 0.000000 0.000000 0 0 0</pose>
+        <mass>0.486754</mass>
+        <inertia>
+          <ixx>0.000604</ixx>
+          <ixy>0.000000</ixy>
+          <ixz>0.000000</ixz>
+          <iyy>0.000402</iyy>
+          <iyz>0.000000</iyz>
+          <izz>0.000402</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <link name="back_right_wheel">
+      <pose>0.125 -0.090 0.0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh><uri>model://rccar/meshes/BackRightWheel.dae</uri></mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh><uri>model://rccar/meshes/BackRightWheel.dae</uri></mesh>
+        </geometry>
+      </visual>
+      <inertial>
+        <pose>0.002500 0.000000 0.000000 0 0 0</pose>
+        <mass>0.486754</mass>
+        <inertia>
+          <ixx>0.000604</ixx>
+          <ixy>0.000000</ixy>
+          <ixz>0.000000</ixz>
+          <iyy>0.000402</iyy>
+          <iyz>0.000000</iyz>
+          <izz>0.000402</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <!-- Define all joints -->
+    <joint type="revolute" name="chassis_front_left_balljoint">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>chassis</parent>
+      <child>front_left_balljoint</child>
+      <axis>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <limit>
+          <lower>-1.04719755</lower>
+          <upper>1.04719755</upper>
+        </limit>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="front_left_balljoint_wheel">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>front_left_balljoint</parent>
+      <child>front_left_wheel</child>
+      <axis>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="chassis_front_right_balljoint">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>chassis</parent>
+      <child>front_right_balljoint</child>
+      <axis>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="front_right_balljoint_wheel">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>front_right_balljoint</parent>
+      <child>front_right_wheel</child>
+      <axis>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <limit>
+          <lower>-1.04719755</lower>
+          <upper>1.04719755</upper>
+        </limit>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="chassis_back_left_wheel">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>chassis</parent>
+      <child>back_left_wheel</child>
+      <axis>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="chassis_back_right_wheel">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>chassis</parent>
+      <child>back_right_wheel</child>
+      <axis>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <!-- Define all external model inclusions and their joints -->
+    <include>
+      <uri>model://D435i</uri>
+      <pose>0.0 0.0819446672 0.181286937 -0.17453293 0 0</pose>
+    </include>
+    <joint type="fixed" name="cam_joint">
+      <parent>chassis</parent>
+      <child>D435i::link</child>
+    </joint>
+
+    <!-- Define the plugin to do IPC -->
+    <plugin name="rccar_plugin"
+      filename="../gazebo/build/plugins/librccar_plugin.so" />
+
+  </model>
+</sdf>
